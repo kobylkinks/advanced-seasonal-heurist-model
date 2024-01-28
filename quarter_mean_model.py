@@ -4,8 +4,6 @@ from pandas.tseries.offsets import MonthEnd
 from typing import Tuple
 
 
-# Разработчик модуля Кобылкин Константин Сергеевич
-
 
 class QuarterConstantModel:
     def __init__(self,

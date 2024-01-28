@@ -93,8 +93,6 @@ class SimpleSeasonalHeuristicModel(BasicSeasonalHeuristicModel):
                                                       факт июня 2023 / факт июня 2021) / 3.
        Здесь средние годовые приросты - одни и те же для всех прогнозных месяцев.
 
-       Разработчик модуля Кобылкин Константин Сергеевич, ЦК ПИМОП, Сбербанк
-
        """
               
     def __init__(self, n_years: int = 2, n_months: int = 3,
@@ -461,7 +459,6 @@ class SlidingSeasonalHeuristicModel(SimpleSeasonalHeuristicModel):
        вычисляется последовательно, вначале для июля 2023, затем для августа 2023 и т.д., т.е. как бы "скользит"
        (sliding) по прогнозным месяцам.
 
-       Разработчик модуля Кобылкин Константин Сергеевич, ЦК ПИМОП, Сбербанк
     """
     def predictSinglePeriod(self) -> pd.DataFrame:
         forecasting_period = pd.Series(pd.date_range(start=self.series.index[-1] + MonthEnd(1),
@@ -502,7 +499,6 @@ class SlidingSeasonalHeuristicModel(SimpleSeasonalHeuristicModel):
 
 
 class RobustSeasonalHeuristicModel(SimpleSeasonalHeuristicModel):
-    """Разработчик модуля и автор идеи со сглаживанием значений - Кобылкин Константин Сергеевич, ЦК ПИМОП, Сбербанк"""
     def __init__(self,
                  past_smoothing_offset_size: int = -1,
                  future_smoothing_offset_size: int = 1,
